@@ -1,3 +1,5 @@
+import pyvisa
+
 class CAL_5500A:
     def __init__(self, address=0):
         rm = pyvisa.ResourceManager()
