@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='Lab_Instruments',
+    name='LabInstruments',
     version='0.1',
     packages=['MetrologyLab', 'MetrologyLab.Waves', 'MetrologyLab.Generators', 'MetrologyLab.Fundamentals',
               'MetrologyLab.MeasuringDevices'],
