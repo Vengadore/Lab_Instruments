@@ -13,7 +13,7 @@ class SPECIFICATION:
     It tends to change in function of the time from the last calibration, and sometimes it tends to change
     due to special functions.
     """
-    def __init__(self,specs,floor,Range,Max_days = 1000):
+    def __init__(self,specs:dict,floor:dict,Range:float):
         """
         Define a specification using ppm, use a dictionary to specify the ppm value,
         :param specs: {'ppm':0.0,'percentage':0.0}
@@ -56,7 +56,7 @@ class DEVICE_RANGE:
     As an example. Let's talk about the
     """
 
-    def __init__(self, Range, Unit, Specification: SPECIFICATION, Full_scale=None):
+    def __init__(self, Range:float, Unit:str, Specification: SPECIFICATION, Full_scale:float = None):
         """
         Define a range for an instrument, for more information read the datasheet of the instrument.
 
@@ -75,7 +75,7 @@ class DEVICE_RANGE:
         else:
             self.Full_scale = Full_scale
 
-    def OUTPUT(self, X):
+    def OUTPUT(self, X:float):
         return (X, self.SPEC.LIMITS(X))
 
     __call__ = OUTPUT
