@@ -1,6 +1,5 @@
 import pyvisa
 
-
 class DMM_3458A:
     def __init__(self, address=0):
         rm = pyvisa.ResourceManager()

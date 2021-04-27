@@ -1,3 +1,5 @@
+import pyvisa
+
 class CAL_5500A:
     def __init__(self, address=0):
         rm = pyvisa.ResourceManager()
@@ -21,7 +23,7 @@ class CAL_5500A:
     def WAIT(self):
         self.write(";*WAI")
 
-    def SET_output(self, amplitude, unit="V", frequency=0):
+    def SET_Output(self, amplitude, unit="V", frequency=0):
         self.write("OUT " + str(amplitude) + " " + str(unit))
         self.WAIT()
         self.write("OUT " + str(frequency) + " HZ")
