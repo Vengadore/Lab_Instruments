@@ -1,8 +1,8 @@
-import pyvisa as pv
+import pyvisa
 
 class Siglent_SDG2122X:
     def __init__(self,address = 0):
-        self.inst = rm.open_resource(pv.ResourceManager().list_resources()[address])
+        self.inst = pyvisa.ResourceManager().open_resource(pyvisa.ResourceManager().list_resources()[address])
         self.inst.timeout = 25000
         self.inst.write('*RST')
         print(self.inst.query('*IDN?'))
