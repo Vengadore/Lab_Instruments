@@ -88,6 +88,6 @@ class DMM_34401A:
         self.write('INITiate')
     def Measure_AC(self):
         self.query('*OPC?')
-        R = self.query('READ?').split(',')
+        R = self.query('FETCH?').split(',')
         R = [float(f) for f in R[0:-1]] + [float(R[-1].split('\\')[0])] 
         return R
