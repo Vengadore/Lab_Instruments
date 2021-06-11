@@ -87,7 +87,6 @@ class DMM_34401A:
         self.write('CALCulate:STATe ON')
         self.write('INITiate')
     def Measure_AC(self):
-        self.Trigger()
         self.query('*OPC?')
         R = self.query('READ?').split(',')
         R = [float(f) for f in R[0:-1]] + [float(R[-1].split('\\')[0])] 
