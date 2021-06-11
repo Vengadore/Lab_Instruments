@@ -64,7 +64,7 @@ class DMM_3458A:
 class DMM_34401A:
     def __init__(self,address = 0):
         rm = pyvisa.ResourceManager()
-        self.inst = rm.open_resource(pv.ResourceManager().list_resources()[address])
+        self.inst = rm.open_resource(pyvisa.ResourceManager().list_resources()[address])
         self.inst.timeout = 250000
         self.inst.write('*RST')
         print(self.inst.query('*IDN?'))
